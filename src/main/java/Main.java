@@ -32,10 +32,17 @@ public class Main {
         System.out.println("Gib eine Kommazahl ein:");
         c= Double.parseDouble(scanner.nextLine());
         scanner.close();
-        System.out.println(String.format("%d geteilt durch %d mal %.2f ergibt %.2f.", b, a, c, calculat(a, b, c)));
+        System.out.println(String.format("%d geteilt durch %d mal %.2f ergibt %.2f.", b, a, c, calculate(a, b, c)));
     }
 
-    public static double calculat(int x, int y, double z){
-        return (double)(y / x) * z;
+    public static double calculate(int x, int y, double z){
+        double result= 0.0;
+        double division;
+        double multiplication;
+
+        division= (double)y / x;
+        multiplication= division * z;
+        result= Math.round(multiplication * 100.0) / 100.0;
+        return result;
     }
 }
